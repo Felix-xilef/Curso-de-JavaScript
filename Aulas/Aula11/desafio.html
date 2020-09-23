@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aeroporto</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unidade de Imigração</h1>
+    Digite o país onde você nasceu: <input type="text" name="txtPais" id="txtPais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resp">
+
+    </div>
+    <script>
+        function verificar() {
+            var país = document.querySelector("input#txtPais")
+            var res = document.getElementById("resp")
+            res.innerHTML = `<p>Você nasceu em <strong>${país.value}</strong></p>`
+            if ((país.value).toLowerCase() == "brasil") {
+                res.innerHTML += `<p>Portanto você é <strong>Brasileiro(a)</strong></p>`
+            } else {
+                res.innerHTML += `<p>Portanto você é <strong>Estrangeiro(a)</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
